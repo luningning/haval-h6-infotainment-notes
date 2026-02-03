@@ -11,10 +11,19 @@ mount -o remount rw /system
 sleep 3
 path=`dirname $0`
 echo $(date +'%Y-%m-%d %H:%M:%S')":-------------------开始执行脚本------------------" >> $path/run.log
-#开始--------执行秒起嘟嘟桌面操作，需要自己安装嘟嘟桌面
+
+
+#开始--------执行解除收费提醒
+echo $(date +'%Y-%m-%d %H:%M:%S')":-------------------开始执行解除收费提醒解除------------------" >> $path/run.log
+if test -f $path/apk/DuerOSActivate.apk ;then
+  cp /system/app/DuerOSActivate/DuerOSActivate.apk $path/apk/DuerOSActivate_bak.apk -rf
+  cp $path/apk/DuerOSActivate.apk /system/app/DuerOSActivate/DuerOSActivate.apk -rf
+  sleep 5
+fi
+#开始--------执行秒起嘟嘟桌面操作
 echo $(date +'%Y-%m-%d %H:%M:%S')":-------------------开始执行秒起嘟嘟桌面操作------------------" >> $path/run.log
 sh $path/file/miaoqidudu.sh
-#开始--------设置语音控制高德地图，需要自己安装高德
+#开始--------设置语音控制高德地图
 mkdir -p /data/data/com.baidu.che.codriver/shared_prefs/
 cp -a  $path/file/prefs_amap.xml /data/data/com.baidu.che.codriver/shared_prefs/
 echo $(date +'%Y-%m-%d %H:%M:%S')":-------------------设置语音控制高德地图结束------------------" >> $path/run.log

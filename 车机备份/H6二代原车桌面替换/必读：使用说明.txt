@@ -1,4 +1,0 @@
-1、将此压缩包解压后把yfautorun.sh、yfautorun.md5及APK文件夹复制到U盘根目录插入车机，重启后即可替换完成
-2、会把原车桌面替换，原车的酒店会替换为高德，外卖替换为KW音乐，智能小程序替换为应用页
-3、后期高德等更新需自行修改高德包名为酒店包名（com.baidu.iov.dueros.hotel）
-4、酷我包名修改为外卖包名（com.baidu.iov.dueros.waimai）
